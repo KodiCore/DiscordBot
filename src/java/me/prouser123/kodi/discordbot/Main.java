@@ -10,10 +10,27 @@ import me.prouser123.kodicore.send.Console;
 import java.lang.IllegalStateException;
 
 public class Main extends JavaPlugin {
+	
 
+	// Instancing
+	private static Main instance;
+	public static String kodiCoreVersion;
+	
     // On Enable
 	@Override
 	public void onEnable() {
+
+		// Instancing
+		instance = this;
+		// Get version
+		kodiCoreVersion = "0.2.1.1-SMD";
+		// Create a instance of Console
+		new Console(this);
+		// Create an instance of Discord
+		//new Discord("null");
+		// Send a message
+		Console.info("Welcome to KodiCore! Initializing...");
+		
 		// Setup config
 		setupConfig();
 		
@@ -52,4 +69,9 @@ public class Main extends JavaPlugin {
     	//File file = new File(getDataFolder(), "config.yml");
     	Console.info("[Discord] Config file found.");
     }
+    
+    // Instancing
+    public static Main inst() {
+  	  return instance;
+  }
 }

@@ -9,7 +9,7 @@ import org.javacord.api.entity.message.embed.EmbedBuilder;
 import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
 
-import me.prouser123.kodicore.Main;
+import me.prouser123.kodi.discordbot.Main;
 
 public class ServerInfo implements MessageCreateListener {
 	
@@ -88,7 +88,7 @@ public class ServerInfo implements MessageCreateListener {
             	.addInlineField("Difficulty", getDifficulty())
             	.addInlineField("Bot Owner", bot_owner)
             	.addInlineField("Server Version", Main.inst().getServer().getVersion().toString())
-            	.setFooter("KodiCore " + Main.version.toString()/*.split("-")[0]*/, "https://cdn.discordapp.com/avatars/215119410103451648/575d90fdda8663b633e36f8b8c06c719.png");
+            	.setFooter("KodiCore " + Main.kodiCoreVersion.toString()/*.split("-")[0]*/, "https://cdn.discordapp.com/avatars/215119410103451648/575d90fdda8663b633e36f8b8c06c719.png");
             	// Send the embed
             event.getChannel().sendMessage(embed2);
             //Console.info(embed2.toString());

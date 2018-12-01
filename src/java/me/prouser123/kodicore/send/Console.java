@@ -3,7 +3,7 @@ package me.prouser123.kodicore.send;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 
-import me.prouser123.kodicore.Main;
+import me.prouser123.kodi.discordbot.Main;
 
 public class Console {
 	
@@ -12,7 +12,7 @@ public class Console {
 	
 	public Console(Plugin plugin) {
 		Console.plugin = plugin;
-		Console.prefix = "[" + plugin.getName() + " " + Main.version + "] ";
+		Console.prefix = "[" + plugin.getName() + " " + Main.kodiCoreVersion + "] ";
 	}
 	
 	/**

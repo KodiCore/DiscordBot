@@ -1,10 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
   <groupId>me.prouser123.kodi</groupId>
   <artifactId>discordbot</artifactId>
-  <version>1.0-STABLE-RC1</version>
+  <version>1.0-STABLE-STANDALONE</version>
+   <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
   <build>
     <sourceDirectory>src/java</sourceDirectory>
     <resources>
@@ -22,11 +25,48 @@
           <target/>
         </configuration>
       </plugin>
+      <!-- Package JavaCord & Dependencies in KodiCore -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.2.0</version>
+        <executions>
+          <execution>
+            <phase>install</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+            <minimizeJar>false</minimizeJar>
+              <artifactSet>
+                <includes>
+                  <include>org.javacord:javacord</include>
+                  <include>org.javacord:javacord-api</include>
+                  <include>org.javacord:javacord-core</include>
+                  <include>com.squareup.okhttp3:okhttp</include>
+                  <include>com.squareup.okio:okio</include>
+                  <include>com.squareup.okhttp3:logging-interceptor</include>
+                  <include>com.fasterxml.jackson.core:jackson-databind</include>
+                  <include>com.fasterxml.jackson.core:jackson-annotations</include>
+                  <include>com.fasterxml.jackson.core:jackson-core</include>
+                  <include>com.neovisionaries:nv-websocket-client</include>
+                  <include>org.apache.logging.log4j:log4j-api</include>
+                </includes>
+              </artifactSet>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
   <name>DiscordBot</name>
   <url>https://github.com/Prouser123/</url>
   <repositories>
+    <!-- Sonatype (For JavaCord) -->
+    <repository>
+      <id>Sonatype Snapshots</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+    </repository>
     <repository>
       <id>spigot-repo</id>
       <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
@@ -68,6 +108,13 @@
       <artifactId>kodicore</artifactId>
       <version>0.2.1-SNAPSHOT-DISCORD</version>
       <scope>provided</scope>
+    </dependency>
+    <!-- JavaCord (Discord Library) -->
+    <dependency>
+      <groupId>org.javacord</groupId>
+      <artifactId>javacord</artifactId>
+      <version>3.0.1</version>
+      <type>pom</type>
     </dependency>
   </dependencies>
 </project>
