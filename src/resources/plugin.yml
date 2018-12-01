@@ -1,0 +1,6 @@
+main: me.prouser123.kodi.discordbot.Main
+name: DiscordBot
+version: ${project.version}
+description: A Discord Bot using the KodiCore API.
+author: Prouser123
+depend: [KodiCore]
