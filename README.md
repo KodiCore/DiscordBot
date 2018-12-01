@@ -1,6 +1,6 @@
 # KodiCore - DiscordBot
 ### Standalone Branch
-#### KodiCore not required on this branch.
+#### KodiCore is not required on this branch, it is packaged in the .JAR.
 
 A simple Discord Bot for Spigot using KodiCore.
 
