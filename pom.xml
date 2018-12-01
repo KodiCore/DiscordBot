@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>me.prouser123.kodi</groupId>
   <artifactId>discordbot</artifactId>
-  <version>1.0-STABLE-STANDALONE</version>
+  <version>1.0-STABLE-STANDALONE-RC1</version>
    <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>

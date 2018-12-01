@@ -35,7 +35,7 @@ public class Main extends JavaPlugin {
 		setupConfig();
 		
 		// Log to Console
-		Console.info("[Discord] Initializing...");
+		Console.info("Initializing...");
 		
 		// Setup Discord
 		try {
@@ -44,7 +44,7 @@ public class Main extends JavaPlugin {
 			Discord.api.addMessageCreateListener(new ServerInfo());
 			Discord.api.addMessageCreateListener(new CopyOwnerAvatar("!getOwnerAvatar"));
 		} catch (Exception e) {
-			Console.warning("[Discord] Exception caught! Did you put the token in the config?");
+			Console.warning("Exception caught! Did you put the token in the config?");
 			getPluginLoader().disablePlugin(this);
 		}
 	}
@@ -55,7 +55,7 @@ public class Main extends JavaPlugin {
     	try {
     		Discord.api.disconnect();
     	} catch (Exception e) {
-    		Console.info("[Discord] Could not disconnect from the Discord API.");
+    		Console.info("Could not disconnect from the Discord API.");
     	}
     }
 	
@@ -67,7 +67,7 @@ public class Main extends JavaPlugin {
     	reloadConfig();
     	// Load file
     	//File file = new File(getDataFolder(), "config.yml");
-    	Console.info("[Discord] Config file found.");
+    	Console.info("Config file found.");
     }
     
     // Instancing
