@@ -13,7 +13,9 @@ Display stats about your Bukkit / Spigot server.
 
 Command: `!serverinfo`
 
-Output: ![!serverinfo output](serverinfo_output.png)
+Output:
+
+<img src="https://github.com/KodiCore/DiscordBot/raw/master-standalone/serverinfo_output.PNG" alt="Output" width=550>
 
 #### Get Owner Avatar
 
