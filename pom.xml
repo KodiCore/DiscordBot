@@ -4,7 +4,7 @@
 
   <groupId>me.prouser123.kodi</groupId>
   <artifactId>discordbot</artifactId>
-  <version>1.0-STABLE</version>
+  <version>1.0-STABLE-RC1</version>
   <build>
     <sourceDirectory>src/java</sourceDirectory>
     <resources>
